@@ -1,9 +1,17 @@
 import { useState } from "react";
+import { useAuth } from "../context/AuthContext";
 
 export function Signup() {
+
+  const { signUp } = useAuth()
+
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
   const [confirmation, setconfirmation] = useState("");
+
+  function handleSubmit(e){
+
+  }
 
   return (
     <div className="container">
@@ -30,7 +38,7 @@ export function Signup() {
           type="password"
         />
 
-        <button className="button-block" type="submit">
+        <button className="button-block" type="submit" onClick={handleSubmit}>
           SignUp
         </button>
       </form>
